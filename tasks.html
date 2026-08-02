@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Open Tasks — CivicSweep</title>
+<meta name="description" content="Browse reported cleanup tasks near you. Claim a task, get it cleaned, and earn a reward.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 24 24%27%3E%3Crect width=%2724%27 height=%2724%27 rx=%276%27 fill=%27%232F6B4F%27/%3E%3Cpath d=%27M6 19l6-6M9 19l-4-4M13 14l6-6-3-3-6 6M6 19c2-4 3-5 6-8%27 stroke=%27white%27 stroke-width=%272%27 fill=%27none%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-page="tasks">
+
+<!-- ============ NAVBAR ============ -->
+<header class="navbar">
+  <div class="container navbar__inner">
+    <a href="index.html" class="navbar__logo">
+      <span class="navbar__logo-mark">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20l6-6M8 20l-4-4M13 15l6-6-3-3-6 6M4 20c2-4 3-5 6-8"/></svg>
+      </span>
+      CivicSweep
+    </a>
+    <nav class="navbar__nav" id="primaryNav">
+      <a href="index.html" class="navbar__link">Home</a>
+      <a href="report.html" class="navbar__link">Report Issue</a>
+      <a href="tasks.html" class="navbar__link is-active">Tasks</a>
+      <a href="dashboard.html" class="navbar__link">Dashboard</a>
+      <a href="about.html" class="navbar__link">About</a>
+    </nav>
+    <div class="navbar__actions">
+      <a href="report.html" class="btn btn--primary btn--sm">Report Issue</a>
+      <button class="navbar__toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ============ PAGE HEADER ============ -->
+<section class="section" style="padding-bottom:0;">
+  <div class="container section-head">
+    <span class="eyebrow">Open cleanup tasks</span>
+    <h1 style="font-size:clamp(2rem, 3vw + 1rem, 2.75rem);">Find a task and start cleaning</h1>
+    <p class="lede">Every card below is a real report waiting on a volunteer. Claim one, clean it, and the reward is yours.</p>
+  </div>
+</section>
+
+<!-- ============ TASK GRID ============ -->
+<section class="section">
+  <div class="container">
+    <div class="filters">
+      <div class="filter-tabs" role="tablist" aria-label="Filter by status">
+        <button class="filter-tab is-active" data-status="all">All Tasks</button>
+        <button class="filter-tab" data-status="open">Open</button>
+        <button class="filter-tab" data-status="claimed">Claimed</button>
+        <button class="filter-tab" data-status="completed">Completed</button>
+      </div>
+      <select class="filter-select" id="categoryFilter" aria-label="Filter by category">
+        <option value="all">All categories</option>
+        <option value="litter">Street Litter</option>
+        <option value="dumping">Illegal Dumping</option>
+        <option value="drainage">Drainage Blockage</option>
+        <option value="toilet">Public Toilet</option>
+        <option value="park">Park / Green Space</option>
+        <option value="water">Water Body</option>
+      </select>
+    </div>
+
+    <div class="grid task-grid" id="taskGrid">
+      <!-- Rendered by script.js from dummy task data -->
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="container footer__grid">
+    <div class="footer__brand">
+      <div class="footer__logo">
+        <span class="footer__logo-mark">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20l6-6M8 20l-4-4M13 15l6-6-3-3-6 6M4 20c2-4 3-5 6-8"/></svg>
+        </span>
+        CivicSweep
+      </div>
+      <p class="footer__tagline">A civic cleanliness platform connecting reporters, volunteers and donors to make cities cleaner, one task at a time.</p>
+      <div class="footer__social">
+        <a href="#" aria-label="Twitter / X"><svg viewBox="0 0 24 24" fill="currentColor" style="color:#fff"><path d="M18.9 3H21l-6.9 7.9L22 21h-6.3l-4.9-6.4L5.2 21H3l7.4-8.4L2.4 3h6.4l4.4 5.8L18.9 3zm-1.1 16h1.2L7.3 5H6l11.8 14z"/></svg></a>
+        <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17" cy="7" r="1" fill="#fff" stroke="none"/></svg></a>
+        <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8"><rect x="3.5" y="3.5" width="17" height="17" rx="3"/><path d="M8 10.5v6M8 7.8v.01M12 16.5v-3.7c0-1.4 1-2.3 2.2-2.3 1.2 0 1.8.9 1.8 2.3v3.7"/></svg></a>
+        <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8"><path d="M14 8.5h2V5.3c-.4-.05-1.6-.16-2.9-.16-2.9 0-4.1 1.8-4.1 4.4V11H6v3.5h3v6.2h3.5v-6.2h2.9L16 11h-3.5V9.9c0-.9.3-1.4 1.5-1.4z"/></svg></a>
+      </div>
+    </div>
+    <div class="footer__col">
+      <h4>Platform</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="report.html">Report Issue</a></li>
+        <li><a href="tasks.html">Browse Tasks</a></li>
+        <li><a href="dashboard.html">Dashboard</a></li>
+      </ul>
+    </div>
+    <div class="footer__col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="about.html#mission">Our Mission</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer__col">
+      <h4>Get Involved</h4>
+      <ul>
+        <li><a href="tasks.html">Become a Volunteer</a></li>
+        <li><a href="#">Donate</a></li>
+        <li><a href="#">Partner With Us</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="container footer__bottom">
+    <p>© <span id="year"></span> CivicSweep. All rights reserved.</p>
+    <p class="footer__credit">Built for a cleaner tomorrow.</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

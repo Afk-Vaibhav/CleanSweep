@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About — CivicSweep</title>
+<meta name="description" content="Learn about CivicSweep's mission, the problem it solves, and how reporters, volunteers and donors work together.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 24 24%27%3E%3Crect width=%2724%27 height=%2724%27 rx=%276%27 fill=%27%232F6B4F%27/%3E%3Cpath d=%27M6 19l6-6M9 19l-4-4M13 14l6-6-3-3-6 6M6 19c2-4 3-5 6-8%27 stroke=%27white%27 stroke-width=%272%27 fill=%27none%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-page="about">
+
+<!-- ============ NAVBAR ============ -->
+<header class="navbar">
+  <div class="container navbar__inner">
+    <a href="index.html" class="navbar__logo">
+      <span class="navbar__logo-mark">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20l6-6M8 20l-4-4M13 15l6-6-3-3-6 6M4 20c2-4 3-5 6-8"/></svg>
+      </span>
+      CivicSweep
+    </a>
+    <nav class="navbar__nav" id="primaryNav">
+      <a href="index.html" class="navbar__link">Home</a>
+      <a href="report.html" class="navbar__link">Report Issue</a>
+      <a href="tasks.html" class="navbar__link">Tasks</a>
+      <a href="dashboard.html" class="navbar__link">Dashboard</a>
+      <a href="about.html" class="navbar__link is-active">About</a>
+    </nav>
+    <div class="navbar__actions">
+      <a href="report.html" class="btn btn--primary btn--sm">Report Issue</a>
+      <button class="navbar__toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ============ ABOUT HERO ============ -->
+<section class="section" style="padding-bottom:0;">
+  <div class="container about-hero">
+    <span class="eyebrow">About CivicSweep</span>
+    <h1 style="font-size:clamp(2.1rem, 3.5vw + 1rem, 3.1rem);">Cleanliness works better as a team sport</h1>
+    <p class="lede" style="margin-inline:auto;">CivicSweep exists because reporting a mess and getting it cleaned used to be two completely disconnected things. We built the bridge — and made it worth volunteers' time to cross it.</p>
+  </div>
+</section>
+
+<!-- ============ MISSION / PROBLEM ============ -->
+<section class="section" id="mission">
+  <div class="container">
+
+    <div class="split-block reveal">
+      <div>
+        <span class="eyebrow">Our mission</span>
+        <h2>Turn civic complaints into civic action</h2>
+        <p>Most people who notice a dirty street have no real way to do anything about it beyond posting a photo and hoping someone official sees it. CivicSweep gives that report somewhere to go: straight to a volunteer who can act on it, backed by a reward that makes showing up worth it.</p>
+        <div class="stat-line">
+          <div><strong>310</strong><span>Areas cleaned</span></div>
+          <div><strong>2,800+</strong><span>Volunteers active</span></div>
+        </div>
+      </div>
+      <div class="split-block__art">
+        <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Concentric circles around a leaf, representing focused civic action">
+          <circle cx="150" cy="150" r="120" fill="none" stroke="var(--color-forest)" stroke-width="1.5" opacity="0.25"/>
+          <circle cx="150" cy="150" r="88" fill="none" stroke="var(--color-forest)" stroke-width="1.5" opacity="0.4"/>
+          <circle cx="150" cy="150" r="56" fill="var(--color-forest-light)"/>
+          <path d="M150 118c0 30 20 48 46 52-4-30-20-48-46-52z" fill="var(--color-forest)"/>
+          <path d="M150 118c0 30-20 48-46 52 4-30 20-48 46-52z" fill="var(--color-forest-dark)"/>
+          <path d="M150 118v64" stroke="var(--color-paper)" stroke-width="2.5" stroke-linecap="round"/>
+          <circle cx="150" cy="150" r="120" fill="none" stroke="var(--color-marigold)" stroke-width="3" stroke-dasharray="6 10" opacity="0.7"/>
+        </svg>
+      </div>
+    </div>
+
+    <div class="split-block reveal">
+      <div class="split-block__art" style="order:-1;">
+        <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Illustration of scattered waste marks beside a rising bar chart, representing the scale of the problem">
+          <g opacity="0.9">
+            <rect x="40" y="190" width="28" height="70" rx="4" fill="var(--color-ink-faint)" opacity="0.5"/>
+            <rect x="80" y="150" width="28" height="110" rx="4" fill="var(--color-ink-faint)" opacity="0.65"/>
+            <rect x="120" y="100" width="28" height="160" rx="4" fill="var(--color-marigold)" opacity="0.85"/>
+          </g>
+          <g stroke="var(--color-ink-faint)" stroke-width="2" stroke-linecap="round" opacity="0.6">
+            <path d="M190 80l10 10M200 80l-10 10"/>
+            <path d="M220 120l9 9M229 120l-9 9"/>
+            <circle cx="230" cy="70" r="4" fill="var(--color-ink-faint)" stroke="none"/>
+            <path d="M250 150l8 8M258 150l-8 8"/>
+          </g>
+          <path d="M40 260h220" stroke="var(--color-ink-faint)" stroke-width="2" opacity="0.4"/>
+        </svg>
+      </div>
+      <div>
+        <span class="eyebrow">The problem</span>
+        <h2>Waste piles up faster than complaints get resolved</h2>
+        <p>Overflowing bins, blocked drains and illegal dumping sites tend to sit untouched — not because nobody notices, but because there's no clear owner for the fix. Municipal channels are slow, and there's rarely a direct way for someone willing to help to actually step in and do the work.</p>
+        <p>CivicSweep closes that gap by turning every report into a claimable task with a visible reward, so the person best placed to fix it — someone nearby, willing, and motivated — can.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============ HOW IT WORKS RECAP ============ -->
+<section class="section section--alt">
+  <div class="container">
+    <div class="section-head section-head--center reveal">
+      <span class="eyebrow" style="justify-content:center">How the platform works</span>
+      <h2>One loop, three roles</h2>
+    </div>
+    <div class="grid roles reveal">
+      <div class="role-card role-card--reporters">
+        <div class="role-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s7-7.58 7-12.5A7 7 0 0 0 5 9.5C5 14.42 12 22 12 22z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+        </div>
+        <h3>Reporters</h3>
+        <p>Spot a dirty spot, submit a photo, pin and description. It's on the board in minutes.</p>
+      </div>
+      <div class="role-card role-card--volunteers">
+        <div class="role-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 20v-1a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v1"/><circle cx="10" cy="7" r="3.5"/><path d="M22 20v-1a4 4 0 0 0-3-3.87M15 3.6a3.5 3.5 0 0 1 0 6.8"/></svg>
+        </div>
+        <h3>Volunteers</h3>
+        <p>Claim a task, clean the spot, mark it complete. The reward lands in their earnings.</p>
+      </div>
+      <div class="role-card role-card--donors">
+        <div class="role-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7.5-4.8-10-9.6C.5 6.8 2.6 4 5.7 4c1.9 0 3.4 1 4.3 2.5C10.9 5 12.4 4 14.3 4 17.4 4 19.5 6.8 22 10.4 19.5 15.2 12 20 12 20z"/></svg>
+        </div>
+        <h3>Donors</h3>
+        <p>Fund the reward pool that keeps volunteers cleaning, task by verified task.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ VALUES ============ -->
+<section class="section">
+  <div class="container">
+    <div class="section-head section-head--center reveal">
+      <span class="eyebrow" style="justify-content:center">What we stand for</span>
+      <h2>Our values</h2>
+    </div>
+    <div class="grid values reveal">
+      <div class="value-card">
+        <div class="value-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s7-7.58 7-12.5A7 7 0 0 0 5 9.5C5 14.42 12 22 12 22z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+        </div>
+        <h4>Transparency</h4>
+        <p>Every task, claim and reward is visible — nothing disappears into a black box.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 20v-1a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v1"/><circle cx="10" cy="7" r="3.5"/><path d="M22 20v-1a4 4 0 0 0-3-3.87M15 3.6a3.5 3.5 0 0 1 0 6.8"/></svg>
+        </div>
+        <h4>Community</h4>
+        <p>Cleaner cities happen when neighbors look out for the spaces they share.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C9 5 7 8 7 11a5 5 0 0 0 10 0c0-3-2-6-5-9z"/><path d="M12 16v6"/></svg>
+        </div>
+        <h4>Sustainability</h4>
+        <p>Rewarded cleanups keep happening, instead of being a one-off event.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5L16 9"/></svg>
+        </div>
+        <h4>Accountability</h4>
+        <p>Every claimed task gets tracked through to a verified, completed state.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA BANNER ============ -->
+<section class="section" style="padding-top:0;">
+  <div class="container">
+    <div class="cta-banner reveal">
+      <div>
+        <h2>Be part of the loop</h2>
+        <p>Whether you're reporting, cleaning, or funding — there's a place for you on CivicSweep.</p>
+      </div>
+      <div class="cta-banner__actions">
+        <a href="report.html" class="btn btn--primary">Report an Issue</a>
+        <a href="tasks.html" class="btn btn--secondary">Start Cleaning</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="container footer__grid">
+    <div class="footer__brand">
+      <div class="footer__logo">
+        <span class="footer__logo-mark">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20l6-6M8 20l-4-4M13 15l6-6-3-3-6 6M4 20c2-4 3-5 6-8"/></svg>
+        </span>
+        CivicSweep
+      </div>
+      <p class="footer__tagline">A civic cleanliness platform connecting reporters, volunteers and donors to make cities cleaner, one task at a time.</p>
+      <div class="footer__social">
+        <a href="#" aria-label="Twitter / X"><svg viewBox="0 0 24 24" fill="currentColor" style="color:#fff"><path d="M18.9 3H21l-6.9 7.9L22 21h-6.3l-4.9-6.4L5.2 21H3l7.4-8.4L2.4 3h6.4l4.4 5.8L18.9 3zm-1.1 16h1.2L7.3 5H6l11.8 14z"/></svg></a>
+        <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17" cy="7" r="1" fill="#fff" stroke="none"/></svg></a>
+        <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8"><rect x="3.5" y="3.5" width="17" height="17" rx="3"/><path d="M8 10.5v6M8 7.8v.01M12 16.5v-3.7c0-1.4 1-2.3 2.2-2.3 1.2 0 1.8.9 1.8 2.3v3.7"/></svg></a>
+        <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8"><path d="M14 8.5h2V5.3c-.4-.05-1.6-.16-2.9-.16-2.9 0-4.1 1.8-4.1 4.4V11H6v3.5h3v6.2h3.5v-6.2h2.9L16 11h-3.5V9.9c0-.9.3-1.4 1.5-1.4z"/></svg></a>
+      </div>
+    </div>
+    <div class="footer__col">
+      <h4>Platform</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="report.html">Report Issue</a></li>
+        <li><a href="tasks.html">Browse Tasks</a></li>
+        <li><a href="dashboard.html">Dashboard</a></li>
+      </ul>
+    </div>
+    <div class="footer__col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="about.html#mission">Our Mission</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer__col">
+      <h4>Get Involved</h4>
+      <ul>
+        <li><a href="tasks.html">Become a Volunteer</a></li>
+        <li><a href="#">Donate</a></li>
+        <li><a href="#">Partner With Us</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="container footer__bottom">
+    <p>© <span id="year"></span> CivicSweep. All rights reserved.</p>
+    <p class="footer__credit">Built for a cleaner tomorrow.</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

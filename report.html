@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Report an Issue — CivicSweep</title>
+<meta name="description" content="Report a dirty or polluted spot in your area. Add a photo, location and description so a volunteer can claim and clean it.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 24 24%27%3E%3Crect width=%2724%27 height=%2724%27 rx=%276%27 fill=%27%232F6B4F%27/%3E%3Cpath d=%27M6 19l6-6M9 19l-4-4M13 14l6-6-3-3-6 6M6 19c2-4 3-5 6-8%27 stroke=%27white%27 stroke-width=%272%27 fill=%27none%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-page="report">
+
+<!-- ============ NAVBAR ============ -->
+<header class="navbar">
+  <div class="container navbar__inner">
+    <a href="index.html" class="navbar__logo">
+      <span class="navbar__logo-mark">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20l6-6M8 20l-4-4M13 15l6-6-3-3-6 6M4 20c2-4 3-5 6-8"/></svg>
+      </span>
+      CivicSweep
+    </a>
+    <nav class="navbar__nav" id="primaryNav">
+      <a href="index.html" class="navbar__link">Home</a>
+      <a href="report.html" class="navbar__link is-active">Report Issue</a>
+      <a href="tasks.html" class="navbar__link">Tasks</a>
+      <a href="dashboard.html" class="navbar__link">Dashboard</a>
+      <a href="about.html" class="navbar__link">About</a>
+    </nav>
+    <div class="navbar__actions">
+      <a href="report.html" class="btn btn--primary btn--sm">Report Issue</a>
+      <button class="navbar__toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ============ PAGE HEADER ============ -->
+<section class="section" style="padding-bottom:0;">
+  <div class="container section-head">
+    <span class="eyebrow">Report an issue</span>
+    <h1 style="font-size:clamp(2rem, 3vw + 1rem, 2.75rem);">Tell us where the mess is</h1>
+    <p class="lede">A few details go a long way: a clear photo and an accurate location help a volunteer find and clean the spot fast.</p>
+  </div>
+</section>
+
+<!-- ============ FORM ============ -->
+<section class="section">
+  <div class="container">
+    <div class="form-layout">
+
+      <div class="form-card">
+        <!-- Success state, hidden until a valid submit -->
+        <div class="success-panel" id="successPanel">
+          <div class="success-panel__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5L16 9"/></svg>
+          </div>
+          <h2 style="font-size:1.5rem;">Report received</h2>
+          <p>Thanks for helping keep your city clean. A nearby volunteer will be able to claim this task shortly.</p>
+          <span class="success-panel__id" id="successId">#CS-1234</span>
+          <div class="success-panel__actions">
+            <a href="tasks.html" class="btn btn--primary">View Open Tasks</a>
+            <button class="btn btn--ghost" id="reportAgainBtn" type="button">Report Another Spot</button>
+          </div>
+        </div>
+
+        <form id="reportForm" novalidate>
+          <div class="form-row--split">
+            <div class="form-row">
+              <label class="form-label" for="reportName">Your name <span class="req">*</span></label>
+              <input class="form-control" type="text" id="reportName" name="reportName" placeholder="e.g. Aisha Khan" autocomplete="name">
+              <span class="error-msg">Please enter your name.</span>
+            </div>
+            <div class="form-row">
+              <label class="form-label" for="reportContact">Email or phone <span class="req">*</span></label>
+              <input class="form-control" type="text" id="reportContact" name="reportContact" placeholder="you@example.com" autocomplete="email">
+              <span class="error-msg">Please enter a valid email or phone number.</span>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <label class="form-label" for="reportLocation">Location <span class="req">*</span></label>
+            <input class="form-control" type="text" id="reportLocation" name="reportLocation" placeholder="Street, landmark or area name">
+            <span class="error-msg">Please tell us where the issue is.</span>
+            <div class="map-placeholder">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4L3 6.5v13L9 17l6 2.5 6-2.5v-13L15 6.5 9 4z"/><path d="M9 4v13M15 6.5v13"/></svg>
+              <span>Interactive map picker coming soon — use the field above for now</span>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <label class="form-label" for="reportCategory">Category <span class="req">*</span></label>
+            <select class="form-control" id="reportCategory" name="reportCategory">
+              <option value="" selected disabled>Choose the type of issue</option>
+              <option value="litter">Street Litter</option>
+              <option value="dumping">Illegal Dumping</option>
+              <option value="drainage">Drainage Blockage</option>
+              <option value="toilet">Public Toilet</option>
+              <option value="park">Park / Green Space</option>
+              <option value="water">Water Body</option>
+              <option value="other">Other</option>
+            </select>
+            <span class="error-msg">Please choose a category.</span>
+          </div>
+
+          <div class="form-row">
+            <label class="form-label">How urgent is it?</label>
+            <div class="radio-group">
+              <label class="radio-pill">
+                <input type="radio" name="urgency" value="low">
+                <span>Low</span>
+              </label>
+              <label class="radio-pill">
+                <input type="radio" name="urgency" value="medium" checked>
+                <span>Medium</span>
+              </label>
+              <label class="radio-pill">
+                <input type="radio" name="urgency" value="high">
+                <span>High</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <label class="form-label" for="reportDescription">Description <span class="req">*</span></label>
+            <textarea class="form-control" id="reportDescription" name="reportDescription" placeholder="What's there, roughly how much of it, and anything a volunteer should know before showing up."></textarea>
+            <span class="form-hint">Minimum 20 characters.</span>
+            <span class="error-msg">Please add at least 20 characters describing the issue.</span>
+          </div>
+
+          <div class="form-row">
+            <label class="form-label" for="reportImage">Photo <span class="req">*</span></label>
+            <div class="upload-zone" id="uploadZone">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 18a4.5 4.5 0 0 1-.7-8.94A5.5 5.5 0 0 1 17 8.5a4 4 0 0 1-1 7.5H7z"/><path d="M12 12v6M9.5 15.5L12 13l2.5 2.5"/></svg>
+              <div class="upload-zone__text">Click to upload or drag a photo here</div>
+              <div class="upload-zone__hint">PNG or JPG, up to 10MB</div>
+              <input type="file" id="reportImage" name="reportImage" accept="image/*">
+            </div>
+            <div class="upload-preview" id="uploadPreview">
+              <img src="" alt="Preview of uploaded photo">
+              <span class="upload-preview__name"></span>
+              <button class="upload-preview__remove" type="button" aria-label="Remove photo">&times;</button>
+            </div>
+            <span class="error-msg">Please attach a photo of the issue.</span>
+          </div>
+
+          <button type="submit" class="btn btn--primary btn--block">Submit Report</button>
+        </form>
+      </div>
+
+      <aside class="form-aside">
+        <div class="info-card">
+          <h3>What happens next</h3>
+          <ul class="info-card__list">
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5L16 9"/></svg>
+              <span>Your report goes live on the Tasks board within minutes.</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5L16 9"/></svg>
+              <span>A nearby volunteer claims it and gets it cleaned.</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5L16 9"/></svg>
+              <span>You'll be able to see the task marked as completed.</span>
+            </li>
+          </ul>
+        </div>
+        <div class="info-card">
+          <h3>Good reports include</h3>
+          <ul class="info-card__list">
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h3l1.5-2h7L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.3"/></svg>
+              <span>A clear, well-lit photo of the actual spot.</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s7-7.58 7-12.5A7 7 0 0 0 5 9.5C5 14.42 12 22 12 22z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+              <span>A landmark or address a stranger could actually find.</span>
+            </li>
+          </ul>
+        </div>
+      </aside>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="container footer__grid">
+    <div class="footer__brand">
+      <div class="footer__logo">
+        <span class="footer__logo-mark">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20l6-6M8 20l-4-4M13 15l6-6-3-3-6 6M4 20c2-4 3-5 6-8"/></svg>
+        </span>
+        CivicSweep
+      </div>
+      <p class="footer__tagline">A civic cleanliness platform connecting reporters, volunteers and donors to make cities cleaner, one task at a time.</p>
+      <div class="footer__social">
+        <a href="#" aria-label="Twitter / X"><svg viewBox="0 0 24 24" fill="currentColor" style="color:#fff"><path d="M18.9 3H21l-6.9 7.9L22 21h-6.3l-4.9-6.4L5.2 21H3l7.4-8.4L2.4 3h6.4l4.4 5.8L18.9 3zm-1.1 16h1.2L7.3 5H6l11.8 14z"/></svg></a>
+        <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17" cy="7" r="1" fill="#fff" stroke="none"/></svg></a>
+        <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8"><rect x="3.5" y="3.5" width="17" height="17" rx="3"/><path d="M8 10.5v6M8 7.8v.01M12 16.5v-3.7c0-1.4 1-2.3 2.2-2.3 1.2 0 1.8.9 1.8 2.3v3.7"/></svg></a>
+        <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8"><path d="M14 8.5h2V5.3c-.4-.05-1.6-.16-2.9-.16-2.9 0-4.1 1.8-4.1 4.4V11H6v3.5h3v6.2h3.5v-6.2h2.9L16 11h-3.5V9.9c0-.9.3-1.4 1.5-1.4z"/></svg></a>
+      </div>
+    </div>
+    <div class="footer__col">
+      <h4>Platform</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="report.html">Report Issue</a></li>
+        <li><a href="tasks.html">Browse Tasks</a></li>
+        <li><a href="dashboard.html">Dashboard</a></li>
+      </ul>
+    </div>
+    <div class="footer__col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="about.html#mission">Our Mission</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer__col">
+      <h4>Get Involved</h4>
+      <ul>
+        <li><a href="tasks.html">Become a Volunteer</a></li>
+        <li><a href="#">Donate</a></li>
+        <li><a href="#">Partner With Us</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="container footer__bottom">
+    <p>© <span id="year"></span> CivicSweep. All rights reserved.</p>
+    <p class="footer__credit">Built for a cleaner tomorrow.</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CivicSweep — Make Your City Cleaner Together</title>
+<meta name="description" content="Report dirty spots, claim cleanup tasks, and earn rewards. CivicSweep connects reporters, volunteers, and donors to keep cities clean.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 24 24%27%3E%3Crect width=%2724%27 height=%2724%27 rx=%276%27 fill=%27%232F6B4F%27/%3E%3Cpath d=%27M6 19l6-6M9 19l-4-4M13 14l6-6-3-3-6 6M6 19c2-4 3-5 6-8%27 stroke=%27white%27 stroke-width=%272%27 fill=%27none%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-page="home">
+
+<!-- ============ NAVBAR ============ -->
+<header class="navbar">
+  <div class="container navbar__inner">
+    <a href="index.html" class="navbar__logo">
+      <span class="navbar__logo-mark">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20l6-6M8 20l-4-4M13 15l6-6-3-3-6 6M4 20c2-4 3-5 6-8"/></svg>
+      </span>
+      CivicSweep
+    </a>
+    <nav class="navbar__nav" id="primaryNav">
+      <a href="index.html" class="navbar__link is-active">Home</a>
+      <a href="report.html" class="navbar__link">Report Issue</a>
+      <a href="tasks.html" class="navbar__link">Tasks</a>
+      <a href="dashboard.html" class="navbar__link">Dashboard</a>
+      <a href="about.html" class="navbar__link">About</a>
+    </nav>
+    <div class="navbar__actions">
+      <a href="report.html" class="btn btn--primary btn--sm">Report Issue</a>
+      <button class="navbar__toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="container hero__inner">
+    <div class="hero__content">
+      <span class="eyebrow">Civic cleanliness platform</span>
+      <h1>Make Your City <span class="accent">Cleaner</span> Together</h1>
+      <p class="lede">Report a dirty spot in a minute, a nearby volunteer claims it and gets it cleaned, and everyone — reporters, volunteers and donors — sees the result. No red tape, just cleaner streets.</p>
+      <div class="hero__actions">
+        <a href="report.html" class="btn btn--primary">Report an Issue</a>
+        <a href="tasks.html" class="btn btn--secondary">Start Cleaning</a>
+      </div>
+      <div class="hero__meta">
+        <div class="hero__meta-item"><strong>1,240+</strong><span>Tasks completed</span></div>
+        <div class="hero__meta-item"><strong>310</strong><span>Areas cleaned</span></div>
+        <div class="hero__meta-item"><strong>2,800+</strong><span>Active volunteers</span></div>
+      </div>
+    </div>
+    <div class="hero__art">
+      <svg viewBox="0 0 560 640" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Illustration of a cluttered street being swept clean into a green, leafy street">
+        <defs>
+          <linearGradient id="heroBg" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="var(--color-mint)"/>
+            <stop offset="0.55" stop-color="var(--color-forest-light)"/>
+            <stop offset="1" stop-color="var(--color-forest)"/>
+          </linearGradient>
+          <linearGradient id="sweepStroke" x1="0" y1="1" x2="1" y2="0">
+            <stop offset="0" stop-color="var(--color-marigold)"/>
+            <stop offset="1" stop-color="var(--color-marigold-dark)"/>
+          </linearGradient>
+        </defs>
+        <rect x="0" y="0" width="560" height="640" fill="url(#heroBg)"/>
+
+        <!-- scattered litter marks: the "before" -->
+        <g stroke="var(--color-ink-faint)" stroke-width="2" stroke-linecap="round" opacity="0.5">
+          <path d="M64 130l14 14M78 130l-14 14"/>
+          <path d="M104 190l12 12M116 190l-12 12"/>
+          <circle cx="56" cy="230" r="5" fill="var(--color-ink-faint)" stroke="none"/>
+          <path d="M124 96l10 10M134 96l-10 10"/>
+          <circle cx="140" cy="240" r="4" fill="var(--color-ink-faint)" stroke="none"/>
+          <path d="M46 170l9 9M55 170l-9 9"/>
+        </g>
+
+        <!-- the sweep: signature broom stroke -->
+        <path d="M40 540 C 170 480, 250 400, 330 290 S 500 90, 536 40" fill="none" stroke="url(#sweepStroke)" stroke-width="26" stroke-linecap="round" opacity="0.92"/>
+        <path d="M40 540 C 170 480, 250 400, 330 290 S 500 90, 536 40" fill="none" stroke="var(--color-paper)" stroke-width="3" stroke-linecap="round" opacity="0.55" stroke-dasharray="1 16"/>
+
+        <!-- sprouting leaves: the "after" -->
+        <g stroke="var(--color-paper)" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.95">
+          <path d="M466 540c0-26 18-42 40-46-4 22-16 38-40 46z"/>
+          <path d="M466 540c0-26-18-42-40-46 4 22 16 38 40 46z"/>
+          <path d="M466 540v40"/>
+          <path d="M414 590c0-20 14-32 32-36-3 17-13 30-32 36z"/>
+          <path d="M414 590v22"/>
+        </g>
+
+        <!-- floating chip: reward -->
+        <g>
+          <rect x="318" y="66" width="178" height="58" rx="16" fill="var(--color-surface)" opacity="0.97"/>
+          <circle cx="349" cy="95" r="15" fill="var(--color-marigold-light)"/>
+          <text x="349" y="100" text-anchor="middle" font-family="var(--font-mono)" font-size="14" fill="var(--color-marigold-dark)" font-weight="700">₹</text>
+          <text x="375" y="90" font-family="var(--font-body)" font-size="11" fill="var(--color-ink-faint)">Reward released</text>
+          <text x="375" y="109" font-family="var(--font-mono)" font-size="16" font-weight="700" fill="var(--color-ink)">₹450.00</text>
+        </g>
+
+        <!-- floating chip: report pin -->
+        <g>
+          <rect x="24" y="360" width="188" height="58" rx="16" fill="var(--color-surface)" opacity="0.97"/>
+          <circle cx="55" cy="389" r="15" fill="var(--color-teal-light)"/>
+          <path d="M55 381a7 7 0 0 1 7 7c0 5-7 11-7 11s-7-6-7-11a7 7 0 0 1 7-7z" fill="var(--color-teal-dark)"/>
+          <text x="80" y="384" font-family="var(--font-body)" font-size="11" fill="var(--color-ink-faint)">New report nearby</text>
+          <text x="80" y="403" font-family="var(--font-mono)" font-size="13" font-weight="700" fill="var(--color-ink)">MG Road Bus Stand</text>
+        </g>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<svg class="wave-divider" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true"><path fill="currentColor" d="M0 40C240 90 480 0 720 20S1200 90 1440 30V90H0Z"/></svg>
+
+<!-- ============ HOW IT WORKS ============ -->
+<section class="section section--alt">
+  <div class="container">
+    <div class="section-head section-head--center reveal">
+      <span class="eyebrow" style="justify-content:center">How it works</span>
+      <h2>Three steps from mess to clean</h2>
+    </div>
+    <div class="grid steps">
+      <div class="step reveal">
+        <span class="step__num">Step 01</span>
+        <div class="step__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h3l1.5-2h7L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.3"/></svg></div>
+        <h3>Report a Spot</h3>
+        <p>Snap a photo, drop a pin, and describe the mess. Reporting takes less than a minute — no sign-up walls.</p>
+      </div>
+      <div class="step reveal">
+        <span class="step__num">Step 02</span>
+        <div class="step__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 20v-1a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v1"/><circle cx="10" cy="7" r="3.5"/><path d="M22 20v-1a4 4 0 0 0-3-3.87M15 3.6a3.5 3.5 0 0 1 0 6.8"/></svg></div>
+        <h3>A Volunteer Claims It</h3>
+        <p>Nearby volunteers browse open tasks and claim the ones they can get to. One task, one volunteer, no overlap.</p>
+      </div>
+      <div class="step reveal">
+        <span class="step__num">Step 03</span>
+        <div class="step__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9.5 15.5c.6.6 1.5 1 2.5 1 1.8 0 3-1 3-2.2 0-3-6-1.3-6-4.3 0-1.2 1.2-2.2 3-2.2 1 0 1.9.4 2.5 1M12 6v1.3M12 16.7V18"/></svg></div>
+        <h3>Everyone Gets Rewarded</h3>
+        <p>Volunteers earn a reward, reporters see the area cleaned, and donors see exactly where their funding went.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STATS ============ -->
+<section class="section">
+  <div class="container">
+    <div class="grid stats reveal">
+      <div>
+        <span class="stat__value" data-count="1240" data-suffix="+">0</span>
+        <p class="stat__label">Tasks completed</p>
+      </div>
+      <div>
+        <span class="stat__value" data-count="310">0</span>
+        <p class="stat__label">Areas cleaned</p>
+      </div>
+      <div>
+        <span class="stat__value" data-count="2800" data-suffix="+">0</span>
+        <p class="stat__label">Active volunteers</p>
+      </div>
+      <div>
+        <span class="stat__value" data-count="680000" data-prefix="₹">0</span>
+        <p class="stat__label">Rewards paid out</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ROLES ============ -->
+<section class="section section--alt">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Built for three roles</span>
+      <h2>Whoever you are, there's a way to help</h2>
+    </div>
+    <div class="grid roles">
+      <div class="role-card role-card--reporters reveal">
+        <div class="role-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s7-7.58 7-12.5A7 7 0 0 0 5 9.5C5 14.42 12 22 12 22z"/><circle cx="12" cy="9.5" r="2.5"/></svg></div>
+        <h3>Reporters</h3>
+        <p>Spot a dirty corner on your commute? Report it with a photo and location, then track it until it's cleaned.</p>
+        <a href="report.html" class="role-card__link">Report an issue <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+      <div class="role-card role-card--volunteers reveal">
+        <div class="role-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 20v-1a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v1"/><circle cx="10" cy="7" r="3.5"/><path d="M22 20v-1a4 4 0 0 0-3-3.87M15 3.6a3.5 3.5 0 0 1 0 6.8"/></svg></div>
+        <h3>Volunteers</h3>
+        <p>Claim cleanup tasks near you, do the work, and earn a reward for every verified job — on your own schedule.</p>
+        <a href="tasks.html" class="role-card__link">Browse open tasks <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+      <div class="role-card role-card--donors reveal">
+        <div class="role-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7.5-4.8-10-9.6C.5 6.8 2.6 4 5.7 4c1.9 0 3.4 1 4.3 2.5C10.9 5 12.4 4 14.3 4 17.4 4 19.5 6.8 22 10.4 19.5 15.2 12 20 12 20z"/></svg></div>
+        <h3>Donors</h3>
+        <p>Fund the rewards that keep volunteers cleaning. Every rupee is tied to a specific task with a visible outcome.</p>
+        <a href="about.html" class="role-card__link">See our impact <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FEATURED TASKS ============ -->
+<section class="section">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Fresh reports</span>
+      <h2>Open tasks near the top of the list</h2>
+    </div>
+    <div class="grid task-grid reveal" id="featuredTasks"></div>
+  </div>
+</section>
+
+<!-- ============ TESTIMONIALS ============ -->
+<section class="section section--alt">
+  <div class="container">
+    <div class="section-head section-head--center reveal">
+      <span class="eyebrow" style="justify-content:center">Voices from the community</span>
+      <h2>What people are saying</h2>
+    </div>
+    <div class="grid testimonials reveal">
+      <div class="testimonial">
+        <div class="testimonial__stars"><svg viewBox="0 0 24 24" fill="currentColor" width="15" height="15"><path d="M12 2l2.9 6.4L22 9.3l-5 4.8 1.3 6.9L12 17.8 5.7 21l1.3-6.9-5-4.8 7.1-1z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" width="15" height="15"><path d="M12 2l2.9 6.4L22 9.3l-5 4.8 1.3 6.9L12 17.8 5.7 21l1.3-6.9-5-4.8 7.1-1z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" width="15" height="15"><path d="M12 2l2.9 6.4L22 9.3l-5 4.8 1.3 6.9L12 17.8 5.7 21l1.3-6.9-5-4.8 7.1-1z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" width="15" height="15"><path d="M12 2l2.9 6.4L22 9.3l-5 4.8 1.3 6.9L12 17.8 5.7 21l1.3-6.9-5-4.8 7.1-1z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" width="15" height="15"><path d="M12 2l2.9 6.4L22 9.3l-5 4.8 1.3 6.9L12 17.8 5.7 21l1.3-6.9-5-4.8 7.1-1z"/></svg></div>
+        <p class="testimonial__quote">I reported an overflowing bin near my society and it was cleaned within two days. Finally, a way to get things done instead of just complaining.</p>
+        <div class="testimonial__person">
+          <span class="testimonial__avatar" style="background:var(--color-forest)">PS</span>
+          <div><strong>Priya Sharma</strong><span>Local Resident</span></div>
+        </div>
+      </div>
+      <div class="testimonial">
+        <div class="testimonial__stars"><svg viewBox="0 0 24 24" fill="currentColor" width="15" height="15"><path d="M12 2l2.9 6.4L22 9.3l-5 4.8 1.3 6.9L12 17.8 5.7 21l1.3-6.9-5-4.8 7.1-1z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" width="15" height="15"><path d="M12 2l2.9 6.4L22 9.3l-5 4.8 1.3 6.9L12 17.8 5.7 21l1.3-6.9-5-4.8 7.1-1z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" width="15" height="15"><path d="M12 2l2.9 6.4L22 9.3l-5 4.8 1.3 6.9L12 17.8 5.7 21l1.3-6.9-5-4.8 7.1-1z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" width="15" height="15"><path d="M12 2l2.9 6.4L22 9.3l-5 4.8 1.3 6.9L12 17.8 5.7 21l1.3-6.9-5-4.8 7.1-1z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" width="15" height="15"><path d="M12 2l2.9 6.4L22 9.3l-5 4.8 1.3 6.9L12 17.8 5.7 21l1.3-6.9-5-4.8 7.1-1z"/></svg></div>
+        <p class="testimonial__quote">I clean up two or three spots most weekends now. The reward is a nice bonus, but seeing the before-and-after is what keeps me coming back.</p>
+        <div class="testimonial__person">
+          <span class="testimonial__avatar" style="background:var(--color-teal)">RV</span>
+          <div><strong>Rohit Verma</strong><span>Volunteer</span></div>
+        </div>
+      </div>
+      <div class="testimonial">
+        <div class="testimonial__stars"><svg viewBox="0 0 24 24" fill="currentColor" width="15" height="15"><path d="M12 2l2.9 6.4L22 9.3l-5 4.8 1.3 6.9L12 17.8 5.7 21l1.3-6.9-5-4.8 7.1-1z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" width="15" height="15"><path d="M12 2l2.9 6.4L22 9.3l-5 4.8 1.3 6.9L12 17.8 5.7 21l1.3-6.9-5-4.8 7.1-1z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" width="15" height="15"><path d="M12 2l2.9 6.4L22 9.3l-5 4.8 1.3 6.9L12 17.8 5.7 21l1.3-6.9-5-4.8 7.1-1z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" width="15" height="15"><path d="M12 2l2.9 6.4L22 9.3l-5 4.8 1.3 6.9L12 17.8 5.7 21l1.3-6.9-5-4.8 7.1-1z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" width="15" height="15"><path d="M12 2l2.9 6.4L22 9.3l-5 4.8 1.3 6.9L12 17.8 5.7 21l1.3-6.9-5-4.8 7.1-1z"/></svg></div>
+        <p class="testimonial__quote">What I like is that I can see exactly which task my contribution funded and who cleaned it. It doesn't feel like money disappearing into a fund.</p>
+        <div class="testimonial__person">
+          <span class="testimonial__avatar" style="background:var(--color-marigold-dark)">AI</span>
+          <div><strong>Ananya Iyer</strong><span>Donor</span></div>
+        </div>
+      </div>
+      <div class="testimonial">
+        <div class="testimonial__stars"><svg viewBox="0 0 24 24" fill="currentColor" width="15" height="15"><path d="M12 2l2.9 6.4L22 9.3l-5 4.8 1.3 6.9L12 17.8 5.7 21l1.3-6.9-5-4.8 7.1-1z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" width="15" height="15"><path d="M12 2l2.9 6.4L22 9.3l-5 4.8 1.3 6.9L12 17.8 5.7 21l1.3-6.9-5-4.8 7.1-1z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" width="15" height="15"><path d="M12 2l2.9 6.4L22 9.3l-5 4.8 1.3 6.9L12 17.8 5.7 21l1.3-6.9-5-4.8 7.1-1z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" width="15" height="15"><path d="M12 2l2.9 6.4L22 9.3l-5 4.8 1.3 6.9L12 17.8 5.7 21l1.3-6.9-5-4.8 7.1-1z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" width="15" height="15"><path d="M12 2l2.9 6.4L22 9.3l-5 4.8 1.3 6.9L12 17.8 5.7 21l1.3-6.9-5-4.8 7.1-1z"/></svg></div>
+        <p class="testimonial__quote">Claiming a task takes seconds and the map makes it easy to pick something on my route to work. It's genuinely simple to use.</p>
+        <div class="testimonial__person">
+          <span class="testimonial__avatar" style="background:var(--color-forest-dark)">KM</span>
+          <div><strong>Karan Mehta</strong><span>Volunteer</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA BANNER ============ -->
+<section class="section">
+  <div class="container">
+    <div class="cta-banner reveal">
+      <div>
+        <h2>Ready to make a difference?</h2>
+        <p>Report the spot that's been bothering you, or claim a task and get your city moving in the right direction.</p>
+      </div>
+      <div class="cta-banner__actions">
+        <a href="report.html" class="btn btn--primary">Report an Issue</a>
+        <a href="tasks.html" class="btn btn--secondary">Start Cleaning</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="container footer__grid">
+    <div class="footer__brand">
+      <div class="footer__logo">
+        <span class="footer__logo-mark">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20l6-6M8 20l-4-4M13 15l6-6-3-3-6 6M4 20c2-4 3-5 6-8"/></svg>
+        </span>
+        CivicSweep
+      </div>
+      <p class="footer__tagline">A civic cleanliness platform connecting reporters, volunteers and donors to make cities cleaner, one task at a time.</p>
+      <div class="footer__social">
+        <a href="#" aria-label="Twitter / X"><svg viewBox="0 0 24 24" fill="currentColor" style="color:#fff"><path d="M18.9 3H21l-6.9 7.9L22 21h-6.3l-4.9-6.4L5.2 21H3l7.4-8.4L2.4 3h6.4l4.4 5.8L18.9 3zm-1.1 16h1.2L7.3 5H6l11.8 14z"/></svg></a>
+        <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17" cy="7" r="1" fill="#fff" stroke="none"/></svg></a>
+        <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8"><rect x="3.5" y="3.5" width="17" height="17" rx="3"/><path d="M8 10.5v6M8 7.8v.01M12 16.5v-3.7c0-1.4 1-2.3 2.2-2.3 1.2 0 1.8.9 1.8 2.3v3.7"/></svg></a>
+        <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8"><path d="M14 8.5h2V5.3c-.4-.05-1.6-.16-2.9-.16-2.9 0-4.1 1.8-4.1 4.4V11H6v3.5h3v6.2h3.5v-6.2h2.9L16 11h-3.5V9.9c0-.9.3-1.4 1.5-1.4z"/></svg></a>
+      </div>
+    </div>
+    <div class="footer__col">
+      <h4>Platform</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="report.html">Report Issue</a></li>
+        <li><a href="tasks.html">Browse Tasks</a></li>
+        <li><a href="dashboard.html">Dashboard</a></li>
+      </ul>
+    </div>
+    <div class="footer__col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="about.html#mission">Our Mission</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer__col">
+      <h4>Get Involved</h4>
+      <ul>
+        <li><a href="tasks.html">Become a Volunteer</a></li>
+        <li><a href="#">Donate</a></li>
+        <li><a href="#">Partner With Us</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="container footer__bottom">
+    <p>© <span id="year"></span> CivicSweep. All rights reserved.</p>
+    <p class="footer__credit">Built for a cleaner tomorrow.</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
