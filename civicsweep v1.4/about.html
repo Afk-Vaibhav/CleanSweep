@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About — Nagrik</title>
+<meta name="description" content="Nagrik turns scattered citizen complaints in Patna into evidence-based infrastructure priorities. Learn about the mission, the problem, and how the AI pipeline works.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 24 24%27%3E%3Crect width=%2724%27 height=%2724%27 rx=%276%27 fill=%27%232F6B4F%27/%3E%3Cpath d=%27M12 21s6.5-6.8 6.5-11.5A6.5 6.5 0 0 0 5.5 9.5C5.5 14.2 12 21 12 21z%27 stroke=%27white%27 stroke-width=%272%27 fill=%27none%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27/%3E%3Ccircle cx=%2712%27 cy=%279.3%27 r=%272.2%27 stroke=%27white%27 stroke-width=%272%27 fill=%27none%27/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-page="about">
+
+<!-- ============ NAVBAR ============ -->
+<header class="navbar">
+  <div class="container navbar__inner">
+    <a href="index.html" class="navbar__logo">
+      <span class="navbar__logo-mark">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s6.5-6.8 6.5-11.5A6.5 6.5 0 0 0 5.5 9.5C5.5 14.2 12 21 12 21z"/><circle cx="12" cy="9.3" r="2.2"/><path d="M3.5 6a13 13 0 0 1 1.8-2.3M20.5 6a13 13 0 0 0-1.8-2.3" opacity="0.65"/></svg>
+      </span>
+      Nagrik
+    </a>
+    <nav class="navbar__nav" id="primaryNav">
+      <a href="index.html" class="navbar__link" data-i18n="nav.home">Home</a>
+      <a href="report.html" class="navbar__link" data-i18n="nav.report">Report a Problem</a>
+      <a href="tasks.html" class="navbar__link" data-i18n="nav.explore">Explore Issues</a>
+      <a href="dashboard.html" class="navbar__link" data-i18n="nav.dashboard">Dashboard</a>
+      <a href="about.html" class="navbar__link is-active" data-i18n="nav.about">About</a>
+    </nav>
+    <div class="navbar__actions">
+      <div class="lang-toggle">
+        <button class="lang-toggle__btn is-active" data-lang="en">EN</button>
+        <button class="lang-toggle__btn" data-lang="hi">हिं</button>
+      </div>
+      <a href="report.html" class="btn btn--primary btn--sm" data-i18n="nav.report">Report a Problem</a>
+      <button class="navbar__toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ============ ABOUT HERO ============ -->
+<section class="section" style="padding-bottom:0;">
+  <div class="container about-hero">
+    <span class="eyebrow" data-i18n="about.eyebrow">About Nagrik</span>
+    <h1 style="font-size:clamp(2.1rem, 3.5vw + 1rem, 3.1rem);" data-i18n="about.h1">Complaints alone don't fix a city</h1>
+    <p class="lede" style="margin-inline:auto;" data-i18n="about.lede">Nagrik exists because a citizen reporting a problem and a government prioritizing it used to be two completely disconnected acts. We built the pipeline between them — verification, clustering, scoring — so a report becomes evidence, not noise.</p>
+  </div>
+</section>
+
+<!-- ============ MISSION / PROBLEM ============ -->
+<section class="section" id="mission">
+  <div class="container">
+
+    <div class="split-block reveal">
+      <div>
+        <span class="eyebrow">Our mission</span>
+        <h2>Convert citizen feedback into infrastructure priorities</h2>
+        <p>Most people who notice a broken road or a dry tap have no real way to make it count beyond a phone call that goes nowhere. Nagrik gives that report somewhere to go: through an AI pipeline that verifies it, clusters it with everyone reporting the same problem, and scores it against real ward-level evidence — population, infrastructure gaps, and growth over time.</p>
+        <div class="stat-line">
+          <div><strong>14</strong><span>Categories tracked</span></div>
+          <div><strong>7</strong><span>Wards covered in this prototype</span></div>
+        </div>
+      </div>
+      <div class="split-block__art">
+        <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Concentric signal rings around a location pin, representing focused civic intelligence">
+          <circle cx="150" cy="150" r="120" fill="none" stroke="var(--color-forest)" stroke-width="1.5" opacity="0.25"/>
+          <circle cx="150" cy="150" r="88" fill="none" stroke="var(--color-forest)" stroke-width="1.5" opacity="0.4"/>
+          <circle cx="150" cy="150" r="56" fill="var(--color-forest-light)"/>
+          <path d="M150 118c-14 0-24 11-24 24 0 18 24 40 24 40s24-22 24-40c0-13-10-24-24-24z" fill="var(--color-forest-dark)"/>
+          <circle cx="150" cy="142" r="9" fill="var(--color-paper)"/>
+          <circle cx="150" cy="150" r="120" fill="none" stroke="var(--color-marigold)" stroke-width="3" stroke-dasharray="6 10" opacity="0.7"/>
+        </svg>
+      </div>
+    </div>
+
+    <div class="split-block reveal">
+      <div class="split-block__art" style="order:-1;">
+        <img src="overflowing-bins.webp" alt="Overflowing public bins surrounded by scattered litter near a bus stand">
+      </div>
+      <div>
+        <span class="eyebrow">The problem</span>
+        <h2>Scattered reports don't add up to a decision</h2>
+        <p>A single photo of an overflowing bin, on its own, is easy to overlook. Multiply it by hundreds of similar reports across a ward, and it's a clear infrastructure gap — but only if something is actually counting, clustering and scoring them together. Most municipal channels aren't built to do that.</p>
+        <p>Nagrik closes that gap: every report feeds a ward-level priority score, so the scale of a problem is visible the moment it crosses a threshold, not months later.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============ HOW IT WORKS RECAP ============ -->
+<section class="section section--alt">
+  <div class="container">
+    <div class="section-head section-head--center reveal">
+      <span class="eyebrow" style="justify-content:center">How the platform works</span>
+      <h2>One report, three stages</h2>
+    </div>
+    <div class="grid steps reveal">
+      <div class="step">
+        <span class="step__num">Stage 01</span>
+        <div class="step__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h3l1.5-2h7L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.3"/></svg></div>
+        <h3>Citizens Report</h3>
+        <p>A photo, a location and a short description — filed in under a minute, no account required.</p>
+      </div>
+      <div class="step">
+        <span class="step__num">Stage 02</span>
+        <div class="step__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l2-7 4 14 2-7h6"/></svg></div>
+        <h3>AI Verifies &amp; Clusters</h3>
+        <p>Reports are checked, scored for severity and urgency, and grouped with others describing the same problem nearby.</p>
+      </div>
+      <div class="step">
+        <span class="step__num">Stage 03</span>
+        <div class="step__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4L3 6.5v13L9 17l6 2.5 6-2.5v-13L15 6.5 9 4z"/><path d="M9 4v13M15 6.5v13"/></svg></div>
+        <h3>Authorities Prioritize</h3>
+        <p>Wards with the highest evidence-backed priority scores rise to the top of the government dashboard.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ VALUES ============ -->
+<section class="section">
+  <div class="container">
+    <div class="section-head section-head--center reveal">
+      <span class="eyebrow" style="justify-content:center">What we stand for</span>
+      <h2>Our values</h2>
+    </div>
+    <div class="grid values reveal">
+      <div class="value-card">
+        <div class="value-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9 5-9 5-9-5 9-5z"/><path d="M3 13l9 5 9-5"/></svg>
+        </div>
+        <h4>Transparency</h4>
+        <p>Every category, score and cluster behind a priority ranking is visible, not a black box.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r="1" fill="currentColor" stroke="none"/></svg>
+        </div>
+        <h4>Evidence-Based</h4>
+        <p>Priority comes from citizen demand and severity data, not whichever complaint shouts loudest.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 5-3.2 8.4-7 10-3.8-1.6-7-5-7-10V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg>
+        </div>
+        <h4>Accountability</h4>
+        <p>Every report is tracked from submission through resolution and citizen verification.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 20v-1a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v1"/><circle cx="10" cy="7" r="3.5"/><path d="M22 20v-1a4 4 0 0 0-3-3.87M15 3.6a3.5 3.5 0 0 1 0 6.8"/></svg>
+        </div>
+        <h4>Accessible</h4>
+        <p>Built for reporting in English, Hindi and Hinglish, with no sign-up wall to file a report.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BRICS INTEROPERABILITY ============ -->
+<section class="section section--alt">
+  <div class="container">
+    <div class="section-head section-head--center reveal">
+      <span class="eyebrow" style="justify-content:center">Built to scale</span>
+      <h2>Ready for BRICS-scale interoperability</h2>
+      <p class="lede" style="margin-inline:auto;">Patna is the live prototype. The schema underneath — country → state → city → ward → locality → coordinates — is designed so the same pipeline could plug in other cities without a rewrite.</p>
+    </div>
+    <div class="brics-grid reveal">
+      <div class="brics-node brics-node--active">
+        <span class="brics-node__flag">🇮🇳</span>
+        <strong>India</strong>
+        <span>Patna &middot; live</span>
+      </div>
+      <div class="brics-node">
+        <span class="brics-node__flag">🇧🇷</span>
+        <strong>Brazil</strong>
+        <span>Schema-ready</span>
+      </div>
+      <div class="brics-node">
+        <span class="brics-node__flag">🇷🇺</span>
+        <strong>Russia</strong>
+        <span>Schema-ready</span>
+      </div>
+      <div class="brics-node">
+        <span class="brics-node__flag">🇨🇳</span>
+        <strong>China</strong>
+        <span>Schema-ready</span>
+      </div>
+      <div class="brics-node">
+        <span class="brics-node__flag">🇿🇦</span>
+        <strong>South Africa</strong>
+        <span>Schema-ready</span>
+      </div>
+    </div>
+    <div class="brics-connector reveal">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v14M6 12l6 6 6-6"/></svg>
+    </div>
+    <div class="brics-layer reveal">
+      <strong>Shared Civic Intelligence Layer</strong>
+      <span>Standardized data schemas and interoperable APIs so each country can keep its own local data while eventually sharing model infrastructure. This prototype does not implement live federated learning — that stays honestly on the roadmap, not simulated as if it already works.</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA BANNER ============ -->
+<section class="section" style="padding-top:0;">
+  <div class="container">
+    <div class="cta-banner reveal">
+      <div>
+        <h2>Be part of the evidence</h2>
+        <p>Whether you're reporting a problem or checking on one that affects you — every voice sharpens the priority score.</p>
+      </div>
+      <div class="cta-banner__actions">
+        <a href="report.html" class="btn btn--primary">Report a Problem</a>
+        <a href="dashboard.html" class="btn btn--secondary">View the Dashboard</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="container footer__grid">
+    <div class="footer__brand">
+      <div class="footer__logo">
+        <span class="footer__logo-mark">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s6.5-6.8 6.5-11.5A6.5 6.5 0 0 0 5.5 9.5C5.5 14.2 12 21 12 21z"/><circle cx="12" cy="9.3" r="2.2"/></svg>
+        </span>
+        Nagrik
+      </div>
+      <p class="footer__tagline" data-i18n="footer.tagline">An AI civic intelligence platform that turns citizen reports into verified, prioritized infrastructure action for Patna, Bihar.</p>
+      <div class="footer__social">
+        <a href="#" aria-label="Twitter / X"><svg viewBox="0 0 24 24" fill="currentColor" style="color:#fff"><path d="M18.9 3H21l-6.9 7.9L22 21h-6.3l-4.9-6.4L5.2 21H3l7.4-8.4L2.4 3h6.4l4.4 5.8L18.9 3zm-1.1 16h1.2L7.3 5H6l11.8 14z"/></svg></a>
+        <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17" cy="7" r="1" fill="#fff" stroke="none"/></svg></a>
+        <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8"><rect x="3.5" y="3.5" width="17" height="17" rx="3"/><path d="M8 10.5v6M8 7.8v.01M12 16.5v-3.7c0-1.4 1-2.3 2.2-2.3 1.2 0 1.8.9 1.8 2.3v3.7"/></svg></a>
+        <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8"><path d="M14 8.5h2V5.3c-.4-.05-1.6-.16-2.9-.16-2.9 0-4.1 1.8-4.1 4.4V11H6v3.5h3v6.2h3.5v-6.2h2.9L16 11h-3.5V9.9c0-.9.3-1.4 1.5-1.4z"/></svg></a>
+      </div>
+    </div>
+    <div class="footer__col">
+      <h4 data-i18n="footer.platform">Platform</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="report.html">Report a Problem</a></li>
+        <li><a href="tasks.html">Explore Issues</a></li>
+        <li><a href="dashboard.html">Dashboard</a></li>
+      </ul>
+    </div>
+    <div class="footer__col">
+      <h4 data-i18n="footer.company">Company</h4>
+      <ul>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="about.html#mission">Our Mission</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer__col">
+      <h4 data-i18n="footer.getinvolved">Get Involved</h4>
+      <ul>
+        <li><a href="tasks.html">Support a Report</a></li>
+        <li><a href="dashboard.html">View Dashboard</a></li>
+        <li><a href="#">Partner With Us</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="container footer__bottom">
+    <p>&copy; <span id="year"></span> Nagrik. All rights reserved.</p>
+    <p class="footer__credit" data-i18n="footer.credit">Patna Civic Intelligence &middot; Prototype</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

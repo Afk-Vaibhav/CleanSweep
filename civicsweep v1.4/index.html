@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nagrik — Patna Civic Intelligence</title>
+<meta name="description" content="Report civic problems in Patna and watch AI verify, score and cluster them into evidence-based infrastructure priorities for the government to act on.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 24 24%27%3E%3Crect width=%2724%27 height=%2724%27 rx=%276%27 fill=%27%232F6B4F%27/%3E%3Cpath d=%27M12 21s6.5-6.8 6.5-11.5A6.5 6.5 0 0 0 5.5 9.5C5.5 14.2 12 21 12 21z%27 stroke=%27white%27 stroke-width=%272%27 fill=%27none%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27/%3E%3Ccircle cx=%2712%27 cy=%279.3%27 r=%272.2%27 stroke=%27white%27 stroke-width=%272%27 fill=%27none%27/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-page="home">
+
+<!-- ============ NAVBAR ============ -->
+<header class="navbar">
+  <div class="container navbar__inner">
+    <a href="index.html" class="navbar__logo">
+      <span class="navbar__logo-mark">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s6.5-6.8 6.5-11.5A6.5 6.5 0 0 0 5.5 9.5C5.5 14.2 12 21 12 21z"/><circle cx="12" cy="9.3" r="2.2"/><path d="M3.5 6a13 13 0 0 1 1.8-2.3M20.5 6a13 13 0 0 0-1.8-2.3" opacity="0.65"/></svg>
+      </span>
+      Nagrik
+    </a>
+    <nav class="navbar__nav" id="primaryNav">
+      <a href="index.html" class="navbar__link is-active" data-i18n="nav.home">Home</a>
+      <a href="report.html" class="navbar__link" data-i18n="nav.report">Report a Problem</a>
+      <a href="tasks.html" class="navbar__link" data-i18n="nav.explore">Explore Issues</a>
+      <a href="dashboard.html" class="navbar__link" data-i18n="nav.dashboard">Dashboard</a>
+      <a href="about.html" class="navbar__link" data-i18n="nav.about">About</a>
+    </nav>
+    <div class="navbar__actions">
+      <div class="lang-toggle">
+        <button class="lang-toggle__btn is-active" data-lang="en">EN</button>
+        <button class="lang-toggle__btn" data-lang="hi">हिं</button>
+      </div>
+      <a href="report.html" class="btn btn--primary btn--sm" data-i18n="nav.report">Report a Problem</a>
+      <button class="navbar__toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="container hero__inner">
+    <div class="hero__content">
+      <span class="eyebrow" data-i18n="home.eyebrow">Patna civic intelligence</span>
+      <h1><span data-i18n="home.h1.pre">Turn Citizen Reports Into</span> <span class="accent" data-i18n="home.h1.accent">Infrastructure Priorities</span></h1>
+      <p class="lede" data-i18n="home.lede">Report a civic problem in a minute. AI verifies it, clusters it with similar reports nearby, and surfaces the wards that need attention most — so Patna's authorities know exactly where to act first.</p>
+      <div class="hero__actions">
+        <a href="report.html" class="btn btn--primary" data-i18n="home.cta1">Report a Problem</a>
+        <a href="tasks.html" class="btn btn--secondary" data-i18n="home.cta2">Explore Civic Issues</a>
+      </div>
+      <div class="hero__meta">
+        <div class="hero__meta-item"><strong>12,420+</strong><span data-i18n="home.meta1">Problems reported</span></div>
+        <div class="hero__meta-item"><strong>8,210</strong><span data-i18n="home.meta2">Problems resolved</span></div>
+        <div class="hero__meta-item"><strong>42</strong><span data-i18n="home.meta3">Active hotspots</span></div>
+      </div>
+    </div>
+    <div class="hero__art">
+      <svg viewBox="0 0 560 640" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Illustration of scattered citizen reports converging into a single highlighted hotspot on a city map">
+        <defs>
+          <linearGradient id="heroBg" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="var(--color-mint)"/>
+            <stop offset="0.55" stop-color="var(--color-forest-light)"/>
+            <stop offset="1" stop-color="var(--color-forest)"/>
+          </linearGradient>
+        </defs>
+        <rect width="560" height="640" fill="url(#heroBg)"/>
+
+        <g stroke="var(--color-paper)" stroke-width="1.4" opacity="0.3">
+          <path d="M0 180h560M0 330h560M0 480h560"/>
+          <path d="M150 0v640M320 0v640M460 0v640"/>
+        </g>
+
+        <g fill="none" stroke="var(--color-paper)" stroke-width="1.6" opacity="0.6" stroke-dasharray="2 7" stroke-linecap="round">
+          <path d="M110 230 C 220 270, 300 320, 372 360"/>
+          <path d="M90 420 C 190 400, 280 380, 372 362"/>
+          <path d="M180 500 C 260 460, 320 410, 372 366"/>
+          <path d="M250 160 C 300 220, 340 280, 374 350"/>
+        </g>
+
+        <g fill="var(--color-surface)" stroke="var(--color-forest-dark)" stroke-width="2">
+          <circle cx="110" cy="230" r="7"/>
+          <circle cx="90" cy="420" r="7"/>
+          <circle cx="180" cy="500" r="7"/>
+          <circle cx="250" cy="160" r="7"/>
+          <circle cx="60" cy="310" r="6"/>
+        </g>
+
+        <circle cx="374" cy="358" r="50" fill="var(--color-marigold)" opacity="0.16"/>
+        <circle cx="374" cy="358" r="32" fill="var(--color-marigold)" opacity="0.3"/>
+        <circle cx="374" cy="358" r="15" fill="var(--color-marigold-dark)"/>
+        <path d="M374 350v16M366 358h16" stroke="var(--color-paper)" stroke-width="2.4" stroke-linecap="round"/>
+
+        <g>
+          <rect x="296" y="76" width="200" height="58" rx="16" fill="var(--color-surface)" opacity="0.97"/>
+          <circle cx="327" cy="105" r="15" fill="var(--color-forest-light)"/>
+          <path d="M321 105l4 4 8-8" stroke="var(--color-forest-dark)" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          <text x="353" y="100" font-family="var(--font-body)" font-size="11" fill="var(--color-ink-faint)">AI verification</text>
+          <text x="353" y="119" font-family="var(--font-mono)" font-size="15" font-weight="700" fill="var(--color-ink)">94% confidence</text>
+        </g>
+
+        <g>
+          <rect x="26" y="470" width="204" height="58" rx="16" fill="var(--color-surface)" opacity="0.97"/>
+          <circle cx="57" cy="499" r="15" fill="var(--color-teal-light)"/>
+          <text x="57" y="504" text-anchor="middle" font-family="var(--font-mono)" font-size="13" fill="var(--color-teal-dark)" font-weight="700">94</text>
+          <text x="83" y="494" font-family="var(--font-body)" font-size="11" fill="var(--color-ink-faint)">Priority score</text>
+          <text x="83" y="513" font-family="var(--font-mono)" font-size="14" font-weight="700" fill="var(--color-ink)">Ward 42 &middot; Water</text>
+        </g>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<svg class="wave-divider" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true"><path fill="currentColor" d="M0 40C240 90 480 0 720 20S1200 90 1440 30V90H0Z"/></svg>
+
+<!-- ============ HOW IT WORKS ============ -->
+<section class="section section--alt">
+  <div class="container">
+    <div class="section-head section-head--center reveal">
+      <span class="eyebrow" style="justify-content:center" data-i18n="home.how.eyebrow">How it works</span>
+      <h2 data-i18n="home.how.h2">From a single report to a city-wide priority</h2>
+    </div>
+    <div class="grid steps">
+      <div class="step reveal">
+        <span class="step__num">Step 01</span>
+        <div class="step__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h3l1.5-2h7L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.3"/></svg></div>
+        <h3 data-i18n="home.step1.title">Report What You See</h3>
+        <p>Describe the problem, add a photo, and share your location. No account or paperwork needed to get started.</p>
+      </div>
+      <div class="step reveal">
+        <span class="step__num">Step 02</span>
+        <div class="step__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l2-7 4 14 2-7h6"/></svg></div>
+        <h3 data-i18n="home.step2.title">AI Reads, Scores and Clusters It</h3>
+        <p>The system detects the category, estimates severity and urgency, and groups it with nearby reports of the same issue.</p>
+      </div>
+      <div class="step reveal">
+        <span class="step__num">Step 03</span>
+        <div class="step__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4L3 6.5v13L9 17l6 2.5 6-2.5v-13L15 6.5 9 4z"/><path d="M9 4v13M15 6.5v13"/></svg></div>
+        <h3 data-i18n="home.step3.title">Authorities Act on the Hotspot</h3>
+        <p>Wards with the highest priority scores rise to the top of the government dashboard, backed by evidence, not guesswork.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STATS ============ -->
+<section class="section">
+  <div class="container">
+    <div class="grid stats reveal">
+      <div>
+        <span class="stat__value" data-count="12420" data-suffix="+">0</span>
+        <p class="stat__label">Problems reported</p>
+      </div>
+      <div>
+        <span class="stat__value" data-count="8210">0</span>
+        <p class="stat__label">Problems resolved</p>
+      </div>
+      <div>
+        <span class="stat__value" data-count="42">0</span>
+        <p class="stat__label">Active hotspots</p>
+      </div>
+      <div>
+        <span class="stat__value" data-count="14">0</span>
+        <p class="stat__label">Categories tracked</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CATEGORY GRID ============ -->
+<section class="section section--alt">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow" data-i18n="home.category.eyebrow">Report anything civic</span>
+      <h2 data-i18n="home.category.h2">Fourteen categories, one pipeline</h2>
+    </div>
+    <div class="grid category-grid reveal" id="categoryGrid"></div>
+  </div>
+</section>
+
+<!-- ============ PRIORITY PREVIEW ============ -->
+<section class="section">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow" data-i18n="home.priority.eyebrow">Live from Patna</span>
+      <h2 data-i18n="home.priority.h2">Top of the priority list right now</h2>
+    </div>
+    <div class="grid task-grid reveal" id="priorityPreview"></div>
+  </div>
+</section>
+
+<!-- ============ TESTIMONIALS ============ -->
+<section class="section section--alt">
+  <div class="container">
+    <div class="section-head section-head--center reveal">
+      <span class="eyebrow" style="justify-content:center" data-i18n="home.testimonials.eyebrow">Voices from Patna</span>
+      <h2 data-i18n="home.testimonials.h2">What people are saying</h2>
+    </div>
+    <div class="grid testimonials reveal">
+      <div class="testimonial">
+        <div class="testimonial__stars"><svg viewBox="0 0 24 24" fill="currentColor" width="15" height="15"><path d="M12 2l2.9 6.4L22 9.3l-5 4.8 1.3 6.9L12 17.8 5.7 21l1.3-6.9-5-4.8 7.1-1z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" width="15" height="15"><path d="M12 2l2.9 6.4L22 9.3l-5 4.8 1.3 6.9L12 17.8 5.7 21l1.3-6.9-5-4.8 7.1-1z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" width="15" height="15"><path d="M12 2l2.9 6.4L22 9.3l-5 4.8 1.3 6.9L12 17.8 5.7 21l1.3-6.9-5-4.8 7.1-1z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" width="15" height="15"><path d="M12 2l2.9 6.4L22 9.3l-5 4.8 1.3 6.9L12 17.8 5.7 21l1.3-6.9-5-4.8 7.1-1z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" width="15" height="15"><path d="M12 2l2.9 6.4L22 9.3l-5 4.8 1.3 6.9L12 17.8 5.7 21l1.3-6.9-5-4.8 7.1-1z"/></svg></div>
+        <p class="testimonial__quote">My water complaint used to disappear into a call centre. This time I could see it get verified, scored, and actually assigned to the water department.</p>
+        <div class="testimonial__person">
+          <span class="testimonial__avatar" style="background:var(--color-forest)">PS</span>
+          <div><strong>Priya Sharma</strong><span>Ward 42 Resident</span></div>
+        </div>
+      </div>
+      <div class="testimonial">
+        <div class="testimonial__stars"><svg viewBox="0 0 24 24" fill="currentColor" width="15" height="15"><path d="M12 2l2.9 6.4L22 9.3l-5 4.8 1.3 6.9L12 17.8 5.7 21l1.3-6.9-5-4.8 7.1-1z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" width="15" height="15"><path d="M12 2l2.9 6.4L22 9.3l-5 4.8 1.3 6.9L12 17.8 5.7 21l1.3-6.9-5-4.8 7.1-1z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" width="15" height="15"><path d="M12 2l2.9 6.4L22 9.3l-5 4.8 1.3 6.9L12 17.8 5.7 21l1.3-6.9-5-4.8 7.1-1z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" width="15" height="15"><path d="M12 2l2.9 6.4L22 9.3l-5 4.8 1.3 6.9L12 17.8 5.7 21l1.3-6.9-5-4.8 7.1-1z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" width="15" height="15"><path d="M12 2l2.9 6.4L22 9.3l-5 4.8 1.3 6.9L12 17.8 5.7 21l1.3-6.9-5-4.8 7.1-1z"/></svg></div>
+        <p class="testimonial__quote">I added "I have this problem too" the day the garbage pile started, and watched the count climb until the department finally sent a truck.</p>
+        <div class="testimonial__person">
+          <span class="testimonial__avatar" style="background:var(--color-teal)">RV</span>
+          <div><strong>Rohit Verma</strong><span>Kadamkuan Resident</span></div>
+        </div>
+      </div>
+      <div class="testimonial">
+        <div class="testimonial__stars"><svg viewBox="0 0 24 24" fill="currentColor" width="15" height="15"><path d="M12 2l2.9 6.4L22 9.3l-5 4.8 1.3 6.9L12 17.8 5.7 21l1.3-6.9-5-4.8 7.1-1z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" width="15" height="15"><path d="M12 2l2.9 6.4L22 9.3l-5 4.8 1.3 6.9L12 17.8 5.7 21l1.3-6.9-5-4.8 7.1-1z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" width="15" height="15"><path d="M12 2l2.9 6.4L22 9.3l-5 4.8 1.3 6.9L12 17.8 5.7 21l1.3-6.9-5-4.8 7.1-1z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" width="15" height="15"><path d="M12 2l2.9 6.4L22 9.3l-5 4.8 1.3 6.9L12 17.8 5.7 21l1.3-6.9-5-4.8 7.1-1z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" width="15" height="15"><path d="M12 2l2.9 6.4L22 9.3l-5 4.8 1.3 6.9L12 17.8 5.7 21l1.3-6.9-5-4.8 7.1-1z"/></svg></div>
+        <p class="testimonial__quote">The ward map tells us where to send teams before the complaints pile up, not after. Wards flagged as hotspots finally get investigated first.</p>
+        <div class="testimonial__person">
+          <span class="testimonial__avatar" style="background:var(--color-marigold-dark)">AI</span>
+          <div><strong>Ananya Iyer</strong><span>Municipal Officer</span></div>
+        </div>
+      </div>
+      <div class="testimonial">
+        <div class="testimonial__stars"><svg viewBox="0 0 24 24" fill="currentColor" width="15" height="15"><path d="M12 2l2.9 6.4L22 9.3l-5 4.8 1.3 6.9L12 17.8 5.7 21l1.3-6.9-5-4.8 7.1-1z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" width="15" height="15"><path d="M12 2l2.9 6.4L22 9.3l-5 4.8 1.3 6.9L12 17.8 5.7 21l1.3-6.9-5-4.8 7.1-1z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" width="15" height="15"><path d="M12 2l2.9 6.4L22 9.3l-5 4.8 1.3 6.9L12 17.8 5.7 21l1.3-6.9-5-4.8 7.1-1z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" width="15" height="15"><path d="M12 2l2.9 6.4L22 9.3l-5 4.8 1.3 6.9L12 17.8 5.7 21l1.3-6.9-5-4.8 7.1-1z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" width="15" height="15"><path d="M12 2l2.9 6.4L22 9.3l-5 4.8 1.3 6.9L12 17.8 5.7 21l1.3-6.9-5-4.8 7.1-1z"/></svg></div>
+        <p class="testimonial__quote">I could actually see how many other people were affected by the same pothole. It stopped feeling like shouting into the void.</p>
+        <div class="testimonial__person">
+          <span class="testimonial__avatar" style="background:var(--color-forest-dark)">KM</span>
+          <div><strong>Karan Mehta</strong><span>Boring Road Resident</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA BANNER ============ -->
+<section class="section">
+  <div class="container">
+    <div class="cta-banner reveal">
+      <div>
+        <h2 data-i18n="home.cta.h2">Seen a problem worth flagging?</h2>
+        <p data-i18n="home.cta.p">Report it in a minute, or browse what's already been reported near you and add your voice to it.</p>
+      </div>
+      <div class="cta-banner__actions">
+        <a href="report.html" class="btn btn--primary">Report a Problem</a>
+        <a href="tasks.html" class="btn btn--secondary">Explore Civic Issues</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="container footer__grid">
+    <div class="footer__brand">
+      <div class="footer__logo">
+        <span class="footer__logo-mark">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s6.5-6.8 6.5-11.5A6.5 6.5 0 0 0 5.5 9.5C5.5 14.2 12 21 12 21z"/><circle cx="12" cy="9.3" r="2.2"/></svg>
+        </span>
+        Nagrik
+      </div>
+      <p class="footer__tagline" data-i18n="footer.tagline">An AI civic intelligence platform that turns citizen reports into verified, prioritized infrastructure action for Patna, Bihar.</p>
+      <div class="footer__social">
+        <a href="#" aria-label="Twitter / X"><svg viewBox="0 0 24 24" fill="currentColor" style="color:#fff"><path d="M18.9 3H21l-6.9 7.9L22 21h-6.3l-4.9-6.4L5.2 21H3l7.4-8.4L2.4 3h6.4l4.4 5.8L18.9 3zm-1.1 16h1.2L7.3 5H6l11.8 14z"/></svg></a>
+        <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17" cy="7" r="1" fill="#fff" stroke="none"/></svg></a>
+        <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8"><rect x="3.5" y="3.5" width="17" height="17" rx="3"/><path d="M8 10.5v6M8 7.8v.01M12 16.5v-3.7c0-1.4 1-2.3 2.2-2.3 1.2 0 1.8.9 1.8 2.3v3.7"/></svg></a>
+        <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8"><path d="M14 8.5h2V5.3c-.4-.05-1.6-.16-2.9-.16-2.9 0-4.1 1.8-4.1 4.4V11H6v3.5h3v6.2h3.5v-6.2h2.9L16 11h-3.5V9.9c0-.9.3-1.4 1.5-1.4z"/></svg></a>
+      </div>
+    </div>
+    <div class="footer__col">
+      <h4 data-i18n="footer.platform">Platform</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="report.html">Report a Problem</a></li>
+        <li><a href="tasks.html">Explore Issues</a></li>
+        <li><a href="dashboard.html">Dashboard</a></li>
+      </ul>
+    </div>
+    <div class="footer__col">
+      <h4 data-i18n="footer.company">Company</h4>
+      <ul>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="about.html#mission">Our Mission</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer__col">
+      <h4 data-i18n="footer.getinvolved">Get Involved</h4>
+      <ul>
+        <li><a href="tasks.html">Support a Report</a></li>
+        <li><a href="dashboard.html">View Dashboard</a></li>
+        <li><a href="#">Partner With Us</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="container footer__bottom">
+    <p>&copy; <span id="year"></span> Nagrik. All rights reserved.</p>
+    <p class="footer__credit" data-i18n="footer.credit">Patna Civic Intelligence &middot; Prototype</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
